@@ -199,7 +199,7 @@ export default function Home() {
                       >
                         Microsoft DO Brasil, Imp...
                       </TitleAtividadeItem>
-                      <BoxTypeBuy style={{}}>
+                      <BoxTypeBuy>
                         <TypeBuy>Pagamento recorrente</TypeBuy>
                       </BoxTypeBuy>
                     </Line>
