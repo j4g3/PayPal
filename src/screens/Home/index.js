@@ -9,7 +9,7 @@ import NotificationsIcons from "./assets/notification.svg";
 import StoreIcon from "./assets/store.svg";
 
 import { useFonts } from "@use-expo/font";
-import { SafeAreaView } from "react-native";
+import { SafeAreaView, Dimensions } from "react-native";
 import { AppLoading } from "expo";
 import {
   Header,
@@ -34,9 +34,14 @@ import {
   TypeBuy,
   BoxTypeBuy,
   OneLineBuy,
+  Line,
 } from "./style";
 
 export default function Home() {
+  const windowWidth = Dimensions.get("window").width;
+  const windowHeight = Dimensions.get("window").height;
+
+  console.log(windowHeight, windowWidth);
   let [fontsLoaded] = useFonts({
     "PayPal-Font": require("./assets/fonts/PayPal.otf"),
   });
@@ -85,7 +90,7 @@ export default function Home() {
               </BoxTitle>
               <BoxMoney>
                 <Real style={{ fontFamily: "PayPal-Font" }}>R$ </Real>
-                <Money style={{ fontFamily: "PayPal-Font" }}>100.000,52</Money>
+                <Money style={{ fontFamily: "PayPal-Font" }}>752.586,52</Money>
               </BoxMoney>
             </UserMoney>
             <History>
@@ -111,15 +116,26 @@ export default function Home() {
                     }}
                   />
                   <OneLineBuy>
-                    <TitleAtividadeItem>
-                      Microsoft DO Brasil, Imp...
-                    </TitleAtividadeItem>
-                    <MoneyBuy style={{ fontFamily: "PayPal-Font" }}>
+                    <Line>
+                      <TitleAtividadeItem
+                        style={{
+                          fontFamily: "PayPal-Font",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        Microsoft DO Brasil, Imp...
+                      </TitleAtividadeItem>
+                      <BoxTypeBuy>
+                        <TypeBuy>Pagamento recorrente</TypeBuy>
+                      </BoxTypeBuy>
+                    </Line>
+                    <MoneyBuy
+                      style={{
+                        fontFamily: "PayPal-Font",
+                      }}
+                    >
                       - R$ 199,99
                     </MoneyBuy>
-                    <BoxTypeBuy>
-                      <TypeBuy>Pagamento recorrente</TypeBuy>
-                    </BoxTypeBuy>
                   </OneLineBuy>
                 </ItemAtividade>
                 <ItemAtividade>
@@ -139,18 +155,25 @@ export default function Home() {
                     }}
                   />
                   <OneLineBuy>
-                    <TitleAtividadeItem>
-                      Microsoft DO Brasil, Imp...
-                    </TitleAtividadeItem>
+                    <Line>
+                      <TitleAtividadeItem
+                        style={{
+                          fontFamily: "PayPal-Font",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        Microsoft DO Brasil, Imp...
+                      </TitleAtividadeItem>
+                      <BoxTypeBuy>
+                        <TypeBuy>Pagamento recorrente</TypeBuy>
+                      </BoxTypeBuy>
+                    </Line>
                     <MoneyBuy style={{ fontFamily: "PayPal-Font" }}>
                       - R$ 199,99
                     </MoneyBuy>
-                    <BoxTypeBuy>
-                      <TypeBuy>Pagamento recorrente</TypeBuy>
-                    </BoxTypeBuy>
                   </OneLineBuy>
                 </ItemAtividade>
-                <ItemAtividade>
+                <ItemAtividade style={{}}>
                   <StoreAtividade
                     width="30"
                     height="30"
@@ -160,22 +183,34 @@ export default function Home() {
                       shadowColor: "#000",
                       shadowOpacity: 0.6,
                       shadowOffset: {
-                        width: 5,
-                        height: 5,
+                        width: 15,
+                        height: 15,
                       },
                       elevation: 4,
                     }}
                   />
                   <OneLineBuy>
-                    <TitleAtividadeItem>
-                      Microsoft DO Brasil, Imp...
-                    </TitleAtividadeItem>
-                    <MoneyBuy style={{ fontFamily: "PayPal-Font" }}>
+                    <Line>
+                      <TitleAtividadeItem
+                        style={{
+                          fontFamily: "PayPal-Font",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        Microsoft DO Brasil, Imp...
+                      </TitleAtividadeItem>
+                      <BoxTypeBuy style={{}}>
+                        <TypeBuy>Pagamento recorrente</TypeBuy>
+                      </BoxTypeBuy>
+                    </Line>
+                    <MoneyBuy
+                      style={{
+                        fontFamily: "PayPal-Font",
+                        alignItems: "flex-end",
+                      }}
+                    >
                       - R$ 199,99
                     </MoneyBuy>
-                    <BoxTypeBuy>
-                      <TypeBuy>Pagamento recorrente</TypeBuy>
-                    </BoxTypeBuy>
                   </OneLineBuy>
                 </ItemAtividade>
               </BoxAtividade>

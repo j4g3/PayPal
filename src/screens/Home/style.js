@@ -70,9 +70,10 @@ export const History = styled(View)`
 export const BoxAtividadeTitles = styled(View)`
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
 `;
 export const BoxAtividade = styled(View)`
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
 `;
 export const ItemAtividade = styled(View)`
@@ -81,28 +82,28 @@ export const ItemAtividade = styled(View)`
 export const StoreAtividade = styled(SvgUri)`
   position: relative;
   background: #697174;
-  padding: 10px;
+  padding: 7px;
   margin-top: 20px;
 
   border-radius: 30px;
 `;
 export const TitleAtividadeItem = styled(Text)`
   margin-left: 5px;
-  font-weight: bold;
   font-size: 15px;
 `;
 export const MoneyBuy = styled(Text)`
-  font-size: 15px;
-  margin-left: 10px;
+  font-size: 20px;
+  margin-left: 5px;
 `;
 export const OneLineBuy = styled(View)`
   margin-top: 20px;
   flex-direction: row;
-  justify-content: flex-start;
   flex-wrap: wrap;
 `;
 export const BoxTypeBuy = styled(View)``;
-
+export const Line = styled(View)`
+  justify-content: space-around;
+`;
 export const TypeBuy = styled(Text)`
   color: #333;
   margin-left: 5px;
